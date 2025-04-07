@@ -9,7 +9,7 @@ var animals = {
     "bear": "growl",
     "frog": "croak",
     "lion": "roar",
-    "bird": "tweet"
+    "bird": "tweet",
 }
 
 function getAnimal() {
@@ -38,6 +38,7 @@ app.get('/api', function(req, res){
   res.end();
 })
 
-module.exports =  app.listen(port, () => {
+module.exports = { app: app.listen(port, () => {
   console.log(`Launching server on http://localhost:${ port }`)
-});
+}), animals };
+
